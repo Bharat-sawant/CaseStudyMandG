@@ -9,11 +9,11 @@ namespace SedolValidation.Service
 {
     public class SedolValidator : ISedolValidator
     {
-        ISedolValidationResult ISedolValidator.ValidateSedol(string input)
+      public   ISedolValidationResult ValidateSedol(string input)
         {
             // soution 1
             
-            if (input.Length != 7 || string.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input) ||input.Length != 7 )
                 return new ChracterValidationResult(input);
             else if (!InvalidCharcter(input))
                 return new InvaidCharactersFoundResult(input);
